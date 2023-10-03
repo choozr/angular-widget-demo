@@ -1,0 +1,24 @@
+<div class="container">
+
+
+  <!-- Product Details -->
+  <section class="product-detail">
+    <div class="product-images">
+      <img [src]="selectedImage" alt="{{ product.name }}" class="main-image">
+
+      <div class="thumbnail-images">
+        <img *ngFor="let image of product.images" [src]="image" (click)="selectImage(image)" alt="{{ product.name }}"
+          class="thumbnail">
+      </div>
+    </div>
+
+    <div class="product-info">
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.description }}</p>
+      <p><strong>Price:</strong> ${{ product.price }}</p>
+      <div id="choozr" #choozr></div>
+      <button (click)="addToCart()">Add to Cart</button>
+    </div>
+  </section>
+
+</div>
